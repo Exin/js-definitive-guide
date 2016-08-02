@@ -2,7 +2,6 @@
  * Created by wangxin on 16/8/2.
  */
 //range.js 实现一个能表示值的范围的类
-//
 function inherit(p){
     if(p==null) throw TypeError();
     if(Object.creat) return Object.create(p);

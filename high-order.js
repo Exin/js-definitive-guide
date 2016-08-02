@@ -4,12 +4,7 @@
 //高阶函数,接受一个或多个函数作为参数,返回一个函数
 
 //这个高阶函数返回一个新函数,这个新函数将他的实参传入f,并且返回f返回值的取反
-//function not(f){
-//    return function(x){
-//        var result = f(x);
-//        return !result;
-//    }
-//}
+
 
 function not(f){
     return function(){

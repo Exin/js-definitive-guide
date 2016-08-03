@@ -98,3 +98,25 @@ plane.attacklevel = 10;
 plane.defenselevel = 9;
 var clonePlane = Object.create(plane);
 console.log(clonePlane);
+//----------------------
+//js原型链
+//想要对象a拥有对象obj的能力,就把a的构造器的原型指向对象b,从而达到继承的效果
+var obj = {name:"ww"};
+var A = function(){};
+A.prototype = obj;
+var a = new A();
+console.log(a.name);
+
+//期望一个类继承另一个类的效果
+//首先遍历对象b中的所有属性,没发现name属性
+//查找name属性的请求委托给b的构造器的原型,被b._proto_记录着并指向B.prototype
+//而B.prototype被设置成了对象new A()
+//在这个对象中依然没有找到name属性
+//请求继续被委托给构造器的原型A.prototype
+var A = function(){};
+A.prototype = {name:"xx"};
+var B = function(){};
+B.prototype = new A();
+
+var b = new B();
+console.log(b.name);
